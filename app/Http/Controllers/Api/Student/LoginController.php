@@ -18,7 +18,8 @@ class LoginController extends Controller
             return response()->json(
                 [
                   'code'=>200,
-                  'message'=>  "تم تسجيل الطالب  بنجاح",
+                  'message'=>  "تم تسجيل الدخول  بنجاح",
+                  'role'=>  Auth::user()->role,
                   'token'=>Auth::user()->createToken("token student")->plainTextToken
                 ], 200);
 
